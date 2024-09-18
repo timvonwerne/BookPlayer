@@ -9,6 +9,7 @@
 import CoreData
 import Foundation
 import UIKit
+import Sentry
 
 public final class DataMigrationManager: BPLogger {
   private let modelName: String = "BookPlayer"
@@ -117,12 +118,32 @@ public final class DataMigrationManager: BPLogger {
   }
 
   public func performMigration() async throws {
+    let crumb = Breadcrumb()
+    crumb.level = SentryLevel.info
+    crumb.category = "launch"
+    crumb.message = "Attempting to perform migration"
+    SentrySDK.addBreadcrumb(crumb)
     return try await withCheckedThrowingContinuation { continuation in
       do {
+        let crumb2 = Breadcrumb()
+        crumb2.level = SentryLevel.info
+        crumb2.category = "launch"
+        crumb2.message = "Performing migration"
+        SentrySDK.addBreadcrumb(crumb2)
         try performMigration {
+          let crumb3 = Breadcrumb()
+          crumb3.level = SentryLevel.info
+          crumb3.category = "launch"
+          crumb3.message = "Migration success"
+          SentrySDK.addBreadcrumb(crumb3)
           continuation.resume()
         }
       } catch {
+        let crumb4 = Breadcrumb()
+        crumb4.level = SentryLevel.info
+        crumb4.category = "launch"
+        crumb4.message = "Migration error: \(error.localizedDescription)"
+        SentrySDK.addBreadcrumb(crumb4)
         continuation.resume(throwing: error)
       }
     }

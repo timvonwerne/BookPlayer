@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 
 /// Wrapper for `DataMigrationManager` to simplify handling all the migrations
 public class DatabaseInitializer: BPLogger {
@@ -42,19 +43,38 @@ public class DatabaseInitializer: BPLogger {
   }
 
   private func loadLibrary() async throws -> CoreDataStack {
+    let crumb = Breadcrumb()
+    crumb.level = SentryLevel.info
+    crumb.category = "launch"
+    crumb.message = "Attempting to load library"
+    SentrySDK.addBreadcrumb(crumb)
     return try await withCheckedThrowingContinuation { continuation in
       let stack = dataMigrationManager.getCoreDataStack()
 
+      let crumb2 = Breadcrumb()
+      crumb2.level = SentryLevel.info
+      crumb2.category = "launch"
+      crumb2.message = "Attempting to load store"
+      SentrySDK.addBreadcrumb(crumb2)
       stack.loadStore { _, error in
         if let error = error {
           Self.logger.error("Failed to load store")
-
+          let crumb3 = Breadcrumb()
+          crumb3.level = SentryLevel.info
+          crumb3.category = "launch"
+          crumb3.message = "Failed to load store: \(error.localizedDescription)"
+          SentrySDK.addBreadcrumb(crumb3)
           continuation.resume(throwing: error)
         } else {
           let dataManager = DataManager(coreDataStack: stack)
           let libraryService = LibraryService(dataManager: dataManager)
           _ = libraryService.getLibrary()
 
+          let crumb4 = Breadcrumb()
+          crumb4.level = SentryLevel.info
+          crumb4.category = "launch"
+          crumb4.message = "Success loading store"
+          SentrySDK.addBreadcrumb(crumb4)
           continuation.resume(returning: stack)
         }
       }
