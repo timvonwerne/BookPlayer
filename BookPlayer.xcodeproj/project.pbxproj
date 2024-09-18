@@ -276,7 +276,6 @@
 		41F1A1F2254B09020043FCF3 /* IDZSwiftCommonCrypto in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1A1F1254B09020043FCF3 /* IDZSwiftCommonCrypto */; };
 		41F1A1FB254B09360043FCF3 /* DirectoryWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1A1FA254B09360043FCF3 /* DirectoryWatcher */; };
 		41F1A204254B09C00043FCF3 /* Themeable in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1A203254B09C00043FCF3 /* Themeable */; };
-		41F1A20D254B0A0C0043FCF3 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1A20C254B0A0C0043FCF3 /* Sentry */; };
 		41F1A228254B0C6C0043FCF3 /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1A227254B0C6C0043FCF3 /* ZipArchive */; };
 		5126F121258E9F18009965DC /* URL+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126F120258E9F18009965DC /* URL+BookPlayer.swift */; };
 		5126F122258E9F18009965DC /* URL+BookPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5126F120258E9F18009965DC /* URL+BookPlayer.swift */; };
@@ -382,6 +381,8 @@
 		638E64CC2B8E086400DCFA3B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638E64CA2B8E086400DCFA3B /* RealmManager.swift */; };
 		638E64CE2B8E1CFD00DCFA3B /* SyncTasksCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638E64CD2B8E1CFD00DCFA3B /* SyncTasksCountService.swift */; };
 		638E64CF2B8E1CFD00DCFA3B /* SyncTasksCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638E64CD2B8E1CFD00DCFA3B /* SyncTasksCountService.swift */; };
+		63980A182C9B1F8C0017772B /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 63980A172C9B1F8C0017772B /* Sentry */; };
+		63980A1A2C9B1F930017772B /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 63980A192C9B1F930017772B /* Sentry */; };
 		6399F94D2AA03C6C00A5C8EA /* BPSKANManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6399F94C2AA03C6C00A5C8EA /* BPSKANManager.swift */; };
 		639AC9892AD9F1D50053AFC6 /* BPDownloadURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AC9882AD9F1D50053AFC6 /* BPDownloadURLSession.swift */; };
 		639AC98A2AD9F1D50053AFC6 /* BPDownloadURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AC9882AD9F1D50053AFC6 /* BPDownloadURLSession.swift */; };
@@ -1398,6 +1399,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63980A1A2C9B1F930017772B /* Sentry in Frameworks */,
 				639E12C02B85A58D00C875F7 /* RealmSwift in Frameworks */,
 				639E12BE2B85A58600C875F7 /* Realm in Frameworks */,
 				9F00F6EA2807B5D300996BBB /* RevenueCat in Frameworks */,
@@ -1420,7 +1422,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F1A204254B09C00043FCF3 /* Themeable in Frameworks */,
-				41F1A20D254B0A0C0043FCF3 /* Sentry in Frameworks */,
 				41A1B0E7226E9BC500EA0400 /* BookPlayerKit.framework in Frameworks */,
 				41F1A1F2254B09020043FCF3 /* IDZSwiftCommonCrypto in Frameworks */,
 				41F1A1E0254B08A10043FCF3 /* DeviceKit in Frameworks */,
@@ -1441,6 +1442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63980A182C9B1F8C0017772B /* Sentry in Frameworks */,
 				639E12BC2B85A4A400C875F7 /* RealmSwift in Frameworks */,
 				639E12BA2B85A4A400C875F7 /* Realm in Frameworks */,
 				9F00F6E82807B5CB00996BBB /* RevenueCat in Frameworks */,
@@ -2824,6 +2826,7 @@
 				9F00F6E92807B5D300996BBB /* RevenueCat */,
 				639E12BD2B85A58600C875F7 /* Realm */,
 				639E12BF2B85A58D00C875F7 /* RealmSwift */,
+				63980A192C9B1F930017772B /* Sentry */,
 			);
 			productName = BookPlayerWatchKit;
 			productReference = 4140EA5E227289720009F794 /* BookPlayerWatchKit.framework */;
@@ -2877,7 +2880,6 @@
 				41F1A1F1254B09020043FCF3 /* IDZSwiftCommonCrypto */,
 				41F1A1FA254B09360043FCF3 /* DirectoryWatcher */,
 				41F1A203254B09C00043FCF3 /* Themeable */,
-				41F1A20C254B0A0C0043FCF3 /* Sentry */,
 				41F1A227254B0C6C0043FCF3 /* ZipArchive */,
 			);
 			productName = "Audiobook Player";
@@ -2921,6 +2923,7 @@
 				9F00F6E72807B5CB00996BBB /* RevenueCat */,
 				639E12B92B85A4A400C875F7 /* Realm */,
 				639E12BB2B85A4A400C875F7 /* RealmSwift */,
+				63980A172C9B1F8C0017772B /* Sentry */,
 			);
 			productName = BookPlayerKit;
 			productReference = 41A1B0D2226E9BC400EA0400 /* BookPlayerKit.framework */;
@@ -5470,11 +5473,6 @@
 			package = 41F1A202254B09C00043FCF3 /* XCRemoteSwiftPackageReference "Themeable" */;
 			productName = Themeable;
 		};
-		41F1A20C254B0A0C0043FCF3 /* Sentry */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 41F1A20B254B0A0C0043FCF3 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
-			productName = Sentry;
-		};
 		41F1A227254B0C6C0043FCF3 /* ZipArchive */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 41F1A226254B0C6C0043FCF3 /* XCRemoteSwiftPackageReference "ZipArchive" */;
@@ -5489,6 +5487,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 41F1A214254B0AA40043FCF3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		63980A172C9B1F8C0017772B /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41F1A20B254B0A0C0043FCF3 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		63980A192C9B1F930017772B /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41F1A20B254B0A0C0043FCF3 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
 		};
 		639E12B92B85A4A400C875F7 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
