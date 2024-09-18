@@ -48,7 +48,12 @@ public class DatabaseInitializer: BPLogger {
     crumb.category = "launch"
     crumb.message = "Attempting to load library"
     SentrySDK.addBreadcrumb(crumb)
-    return try await withCheckedThrowingContinuation { continuation in
+    return try await withUnsafeThrowingContinuation { continuation in
+      let crumb5 = Breadcrumb()
+      crumb5.level = SentryLevel.info
+      crumb5.category = "launch"
+      crumb5.message = "Start withCheckedThrowingContinuation"
+      SentrySDK.addBreadcrumb(crumb5)
       let stack = dataMigrationManager.getCoreDataStack()
 
       let crumb2 = Breadcrumb()
